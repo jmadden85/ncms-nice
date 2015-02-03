@@ -1,0 +1,5 @@
+{
+  "directory": "public/libraries/",
+  "analytics": true,
+  "timeout": 120000
+}
