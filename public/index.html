@@ -3,10 +3,20 @@
         <title>Angular App</title>
         <link rel="stylesheet" href="libraries/bootstrap/dist/css/bootstrap.css">
     </head>
-    <body ng-app="flapperNews" ng-controller="MainCtrl">
+    <body ng-app="flapperNews" ng-controller="MainCtrl as main">
         <div>
-            {{test}}
+            {{main.test}}
         </div>
+        <div ng-repeat="list in main.list">
+            {{list}}
+        </div>
+        <button ng-click="main.buttonClick()">
+            {{main.buttonText}}
+        </button>
+        <form ng-submit="main.formSubmit()">
+            <input type="text" ng-model="main.title" />
+            <button type="submit">Post</button>
+        </form>
         <script src="libraries/jquery/dist/jquery.min.js"></script>
         <script src="libraries/bootstrap/dist/js/bootstrap.min.js"></script>
         <script src="libraries/angular/angular.min.js"></script>
