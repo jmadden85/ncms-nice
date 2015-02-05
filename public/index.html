@@ -1,31 +1,21 @@
-<html>
+<html ng-app="testApp">
     <head>
         <title>Angular App</title>
         <link rel="stylesheet" href="libraries/bootstrap/dist/css/bootstrap.css">
     </head>
-    <body ng-app="flapperNews" ng-controller="MainCtrl as main">
-        <div>
-            {{main.test}}
-        </div>
-        <div ng-repeat="post in main.posts">
-            {{post}}
-        </div>
-        <button ng-click="main.buttonClick()">
-            {{main.buttonText}}
-        </button>
-        <form ng-submit="main.formSubmit()">
-            <input type="text" ng-model="main.title" />
-            <button type="submit">Post</button>
-        </form>
-        <a href="test">Test</a>
+    <!--<body ng-controller="MainCtrl as main">-->
+    <body>
+
+        <!--<form ng-submit="main.formSubmit()">-->
+            <!--<input type="text" ng-model="main.title" />-->
+            <!--<button type="submit">Post</button>-->
+        <!--</form>-->
+
+        <!--<div ng-repeat="post in main.posts track by $index">-->
+            <!--{{post}}-->
+        <!--</div>-->
 
         <div ng-view></div>
-
-        <script type="text/ng-template" id="test.html">
-            <div>
-                {{test.text}}
-            </div>
-        </script>
 
 
         <script src="libraries/jquery/dist/jquery.min.js"></script>
@@ -33,5 +23,8 @@
         <script src="libraries/angular/angular.min.js"></script>
         <script src="libraries/angular-route/angular-route.min.js"></script>
         <script src="modules/flapper/app.js"></script>
+        <script src="modules/flapper/controller.js"></script>
+        <script src="modules/flapper/services.js"></script>
+        <script src="modules/flapper/routes.js"></script>
     </body>
 </html>
