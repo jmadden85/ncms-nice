@@ -1,10 +1,10 @@
 <div>
-    {{posts.post}}
+    {{post.contents.text}}
     <form ng-submit="submitComment">
-        <input ng-model="posts.comment" type="text" />
+        <input ng-model="post.comment" type="text" />
         <button type="submit">Submit</button>
     </form>
-    <div ng-repeat="comment in posts.comment">
+    <div ng-repeat="comment in post.comments">
         {{comment}}
     </div>
 </div>

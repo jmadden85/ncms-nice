@@ -12,15 +12,19 @@ app.factory('posts', function () {
       return dateString;
     };
 
-    var findPost = function (element, index, array, that) {
-      if (element.id === that.id) {
-        return {el: element, i: index};
-      } else {
-        return false;
+    var findPost = function (id) {
+      return function (element) {
+        return element.id === id;
       }
     };
 
     service.posts = [];
+    var post1 = {
+      text: 'testing 1...2...3',
+      id: 0,
+      comments: []
+    };
+    service.posts.push(post1);
 
     service.addPost = function (post) {
       var thisPost = {
@@ -29,19 +33,20 @@ app.factory('posts', function () {
         comments: []
       };
       service.posts.push(thisPost);
-      console.log(thisPost.id, thisPost.text);
+    };
+
+    service.getPost = function (id) {
+      console.log(service.posts.filter(findPost(id)));
+      return service.posts.filter(findPost(id))[0];
     };
 
     service.addComment = function (comment, id) {
-      var that = this;
-      var that.id = id;
       var thisComment = {
         text: comment,
         date: getDate()
       };
-      $filter('posts')(services.posts, function () {
-
-      });
+      var thisPost = service.getPost(id);
+      thisPost.comments.push(thisComment);
     };
 
     return service;
