@@ -1,5 +1,6 @@
 app.factory('posts', function () {
     var service = {};
+
     var getDate = function () {
       var date = new Date();
       var month = date.getMonth() + 1;
