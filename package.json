@@ -8,7 +8,9 @@
     "gulp": "^3.8.10",
     "mongoose": "^3.8.22"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "gulp-nodemon": "^1.0.5"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
