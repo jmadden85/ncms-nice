@@ -5,6 +5,6 @@ router.get('/', function (req, res) {
   res.send('test');
 });
 
-router.get('/home', home);
+router.all('/home', home);
 
 module.exports = router;
