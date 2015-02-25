@@ -4,11 +4,11 @@ app.factory('posts', function () {
     var getDate = function () {
       var date = new Date();
       var month = date.getMonth() + 1;
-      var day = date.getDay + 1;
-      var year = date.getYear();
+      var day = date.getDay() + 1;
+      var year = date.getFullYear();
       var hour = date.getHours() > 12 ? date.getHours() - 12 : date.getHours();
       var minutes = date.getMinutes();
-      var dateString = hour + ":" + minutes + "|" + month + "-" + day + "-" + year;
+      var dateString = hour + ":" + minutes + " | " + month + "-" + day + "-" + year;
       return dateString;
     };
 
@@ -36,7 +36,6 @@ app.factory('posts', function () {
     };
 
     service.getPost = function (id) {
-      console.log(service.posts.filter(findPost(id)));
       return service.posts.filter(findPost(id))[0];
     };
 
@@ -47,6 +46,7 @@ app.factory('posts', function () {
       };
       var thisPost = service.getPost(id);
       thisPost.comments.push(thisComment);
+      console.log(service.posts);
     };
 
     return service;

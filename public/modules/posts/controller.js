@@ -13,7 +13,16 @@ app.controller('MainCtrl', ['posts', function (posts) {
 
 app.controller('PostCtrl', ['posts', '$route', '$routeParams', function (posts, $route, $routeParams) {
     var post = this;
-    post.contents = posts.getPost($routeParams.postId);
-    console.log(post.contents);
+    post.id = parseInt($routeParams.postId, 10);
+    post.contents = posts.getPost(post.id);
+    post.addComment = posts.addComment;
+
+    post.comments = posts.getPost(post.id).comments;
+
+    post.submitComment = function () {
+      console.log(post.comments);
+      post.addComment(this.comment, post.id);
+      return false;
+    };
   }]
 );
