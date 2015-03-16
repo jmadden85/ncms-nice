@@ -1,3 +1,5 @@
+'use strict';
+
 app.config(function ($routeProvider, $locationProvider) {
   $routeProvider
     .when('/nodeCMS/public', {

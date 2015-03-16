@@ -1,3 +1,5 @@
+'use strict';
+
 app.controller('MainCtrl', ['posts', function (posts) {
     var main = this;
     main.posts = posts.posts;
