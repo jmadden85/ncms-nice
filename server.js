@@ -3,7 +3,6 @@ var app = express();
 var router = require('./router');
 
 app.use('/', router);
-app.use('/home', router);
 
 var server = app.listen(3000, function () {
   var host = server.address().address;
